@@ -18,7 +18,8 @@ MSBuild executes `Postman.WebApi.MsBuildTask.Generator` as an _AfterBuild_ task 
 1. Make sure you have checked the "XML Documentation file" checkbox in the build properties for the project containing your ApiControllers
 1. Build your project to create the `<AssemblyName>.postman.json` file in your project root
 1. Open Postman and import the collection file
-1. Add a new Postman [environment](https://www.getpostman.com/docs/environments) and set _key_ to `url` and _value_ to your http api endpoint root (e.g. `http://localhost:3000/myapp`)
+1. Add a new Postman [environment](https://www.getpostman.com/docs/environments) and set _key_ to `url` and _value_ to your http api endpoint root e.g. `http://localhost:3000/myapp`
+
 #### How do I configure it?
 You can override the default configuration by modifying the `.targets` file located in the `packages` directory.  __Note that removing/upgrading the package will set the configuration back to the defaults.__
 | Option | Description | Default | Required |
