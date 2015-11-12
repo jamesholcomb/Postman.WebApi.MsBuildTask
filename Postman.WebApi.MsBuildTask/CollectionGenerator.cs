@@ -80,7 +80,9 @@ namespace Postman.WebApi.MsBuildTask
 
 			var baseUrl = "{{" + environmentKey + "}}/";
 			var assemblyName = Path.GetFileNameWithoutExtension(assemblyFilePath);
-			var xmlPath = assemblyFilePath.Replace(Resources.DllFileExtension, Resources.XmlFileExtension);
+			var xmlPath = assemblyFilePath
+				.ToLowerInvariant()
+				.Replace(Resources.DllFileExtension, Resources.XmlFileExtension);
 
 			if (!File.Exists(xmlPath))
 			{

@@ -28,7 +28,7 @@ namespace Postman.WebApi.MsBuildTask
 		{
 			// When executed as a task by MSBuild.exe, the configuration file is msbuild.exe.config
 			// Manually redirect assembly bindings in case the host project has dependencies on differing versions
-			var configFile = Assembly.GetExecutingAssembly().Location + Resources.ConfigFileExtension;
+			var configFile = Assembly.GetExecutingAssembly().CodeBase + Resources.ConfigFileExtension;
 
 			var appConfig = new AppConfig();
 			appConfig.Load(configFile);

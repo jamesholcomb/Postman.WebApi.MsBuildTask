@@ -26,7 +26,8 @@ namespace Postman.WebApi.MsBuildTask.Tests
 		public void creates_postman_collection()
 		{
 			// Arrange
-			var assemblyFilePath = Assembly.GetExecutingAssembly().Location;
+			var codeBase = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+			var assemblyFilePath = codeBase.LocalPath;
 
 			var generator = new CollectionGenerator();
 
@@ -48,9 +49,12 @@ namespace Postman.WebApi.MsBuildTask.Tests
 		{
 			// Arrange
 			var mock = new Mock<IBuildEngine>();
+			var codeBase = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+			var assemblyFilePath = codeBase.LocalPath;
+
 			var task = new GenerateTask
 			{
-				AssemblyFilePath = Assembly.GetExecutingAssembly().Location,
+				AssemblyFilePath = assemblyFilePath,
 				OutputDirectory = @".\",
 				BuildEngine = mock.Object
 			};
@@ -71,15 +75,18 @@ namespace Postman.WebApi.MsBuildTask.Tests
 		public void throws_filenotfoundexception_when_no_xml_doc_file_found()
 		{
 			// Arrange
+			var codeBase = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+			var assemblyFilePath = codeBase.LocalPath;
+
 			var mock = new Mock<IBuildEngine>();
 			GenerateTask task = new GenerateTask
 			{
-				AssemblyFilePath = Assembly.GetExecutingAssembly().Location,
+				AssemblyFilePath = assemblyFilePath,
 				OutputDirectory = @".\",
 				BuildEngine = mock.Object
 			};
 
-			var xmlFile = Assembly.GetExecutingAssembly().Location.Replace(Resources.DllFileExtension, Resources.XmlFileExtension);
+			var xmlFile = task.AssemblyFilePath.Replace(Resources.DllFileExtension, Resources.XmlFileExtension);
 			var tmpFile = @"tmp.xml";
 			File.Move(xmlFile, tmpFile);
 
