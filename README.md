@@ -1,6 +1,6 @@
 #Postman.WebApi.MsBuildTask
-[![Nuget version](https://img.shields.io/nuget/v/Nuget.Core.svg)](http://www.yahoo.com)
-[![Build status](https://ci.appveyor.com/api/projects/status/mxm9wcf5j5yrf1uu/branch/master?svg=true)](https://ci.appveyor.com/project/jamesholcomb/Postman.WebApi.MsBuildTask/branch/master)
+[![Nuget version](https://img.shields.io/nuget/v/Nuget.Core.svg)](http://www.nuget.org)
+[![Build status](https://ci.appveyor.com/api/projects/status/fbbjue07o913v0n7/branch/master?svg=true)](https://ci.appveyor.com/project/jamesholcomb/postman-webapi-msbuildtask/branch/master)
 ####What is it?
 An MSBuild [task](https://msdn.microsoft.com/en-us/library/t9883dzc.aspx) to automatically generate documented [Postman 3](http://www.getpostman.com) collections from your ApiController derived classes
 ####What does it do?
@@ -19,7 +19,7 @@ MSBuild executes `Postman.WebApi.MsBuildTask.Generator` as an _AfterBuild_ task 
 1. Build your project to create the `<AssemblyName>.postman.json` file in your project root
 1. Open Postman and import the collection file
 1. Add a new Postman [environment](https://www.getpostman.com/docs/environments) and set _key_ to `url` and _value_ to your http api endpoint root (e.g. `http://localhost:3000/myapp`)
-####How do I configure it?
+#### How do I configure it?
 You can override the default configuration by modifying the `.targets` file located in the `packages` directory.  __Note that removing/upgrading the package will set the configuration back to the defaults.__
 | Option | Description | Default | Required |
 | ------ | ----------- | ------- | -------- |
