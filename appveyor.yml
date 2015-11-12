@@ -1,0 +1,50 @@
+# Notes:
+#   - Minimal appveyor.yml file is an empty file. All sections are optional.
+#   - Indent each level of configuration with 2 spaces. Do not use tabs!
+#   - All section names are case-sensitive.
+#   - Section names should be unique on each level.
+
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# Retain the NuGet package cache between builds
+cache:
+  - C:\Users\appveyor\AppData\Local\NuGet\Cache
+
+# version format
+version: 0.0.1.{build}
+
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+
+# http://blog.appveyor.com/2014/06/04/shallow-clone-for-git-repositories/
+shallow_clone: true
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Debug
+
+build:
+  project: Postman.WebApi.MsBuildTask.sln
+
+  # MSBuild verbosity level
+  verbosity: minimal
+
+# scripts to run before build
+before_build: nuget restore
+
+on_finish:
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+test:
+  assemblies:
+    - '**\*.UnitTests.dll'
