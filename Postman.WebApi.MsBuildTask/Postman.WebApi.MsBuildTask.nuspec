@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>https://github.com/jamesholcomb/Postman.WebApi.MsBuildTask/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/jamesholcomb/Postman.WebApi.MsBuildTask</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>An MSBuild Task to generate Postman v3 collections from WebApi ApiControllers without dependencies on MVC, WebApiHelp or System.Web. Based on Yao's example http://goo.gl/0YMkKq</description>
+		<copyright>Copyright 2015</copyright>
+		<tags>WebApi Web Api generator Postman REST MSBuild Task</tags>
+		<developmentDependency>true</developmentDependency>
+	</metadata>
+	<files>
+		<file src="app.config" target="tools\$id$.dll.config"/>
+		<file src="..\build\*.targets" target="build" />
+		<file src="..\packages\Conditions.2.0.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10\Conditions.dll" target="tools"/>
+		<file src="..\packages\Html2Markdown.1.0.3.11422\lib\net45\Html2Markdown.dll" target="tools" />
+		<file src="..\packages\LinqExtensions.0.0.1.14396\lib\net45\LinqExtensions.dll" target="tools" />
+		<file src="..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll" target="tools" />
+		<file src="..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll" target="tools" />
+		<file src="..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll" target="tools" />
+		<file src="..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" target="tools" />
+	</files>
+</package>

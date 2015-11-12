@@ -1,0 +1,145 @@
+{
+  "id": "bb8b8da2-0567-496a-9e92-f313709edded",
+  "name": "Postman.WebApi.MsBuildTask.Tests",
+  "timestamp": 1447293621108,
+  "requests": [
+    {
+      "id": "3f3981cd-b31f-4a3b-8e3a-6c7506a2c1de",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/foo/{id}/bar?myIntParameter={myIntParameter}&myStringParamter={myStringParamter}&myBoolParameter={myBoolParameter}",
+      "pathVariables": {
+        "id": "id-value"
+      },
+      "method": "GET",
+      "data": null,
+      "rawModeData": "[\r\n  1,\r\n  2\r\n]",
+      "dataMode": "raw",
+      "name": "foo/{id}/bar?myIntParameter={myIntParameter}&myStringParamter={myStringParamter}&myBoolParameter={myBoolParameter}",
+      "description": "**Summary** Some obsolete GET method.  \r\n**Remarks** Deprecated, do not use  \r\n**Parameters**  \r\n`int` myIntParameter - _An int parameter_, required  \r\n`string` myStringParamter - _A string paramter_, required  \r\n`bool` myBoolParameter - _if set to true [my bool parameter]_, required  \r\n`List<int>` myIds - _A list of integer ids._, required  \r\n**Returns**  \r\n`TestContent`  \r\n**Authorization** Required _Roles: [admin]_  \r\n**Obsolete**\r\n_Supports ASP.NET WebApi OData query string syntax_",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea"
+    },
+    {
+      "id": "8f0205a5-9419-498f-bf08-302317ab3b4d",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/message/{typeName}?skip={skip}&take={take}",
+      "pathVariables": {
+        "typeName": "typeName-value"
+      },
+      "method": "GET",
+      "data": null,
+      "rawModeData": null,
+      "dataMode": "raw",
+      "name": "message/{typeName}?skip={skip}&take={take}",
+      "description": "**Summary** Returns the messages in a queue  \r\n**Parameters**  \r\n`string` typeName - _The queue name_, required  \r\n`Nullable<int>` skip - _The number of records to skip_, required  \r\n`Nullable<int>` take - _The number of records to take_, required  \r\n**Returns**  \r\n`List<string>` - _The list of messages_  \r\n",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea"
+    },
+    {
+      "id": "0cb99e35-9832-432d-80a6-ca7474e8de54",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/Test",
+      "pathVariables": {},
+      "method": "GET",
+      "data": null,
+      "rawModeData": null,
+      "dataMode": "raw",
+      "name": "Test",
+      "description": "**Summary** Retrieves a list of `T:Postman.WebApi.MsBuildTask.Tests.TestContent`  \r\n**Remarks** See help file for documentation  \r\n**Returns**  \r\n`IEnumerable<TestContent>` - _The test content_  \r\n**Authorization** Required _Roles: [admin]_  \r\n",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea"
+    },
+    {
+      "id": "21406150-3069-4f25-aed2-bfde16f6b3f0",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/Test?id={id}",
+      "pathVariables": {},
+      "method": "GET",
+      "data": null,
+      "rawModeData": null,
+      "dataMode": "raw",
+      "name": "Test?id={id}",
+      "description": "**Summary** Retrieves a `T:Postman.WebApi.MsBuildTask.Tests.TestContent`  \r\n**Parameters**  \r\n`int` id - required  \r\n**Returns**  \r\n`TestContent`  \r\n",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea"
+    },
+    {
+      "id": "d41f6d8c-fbae-4615-879a-6787ae2cab38",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/Test",
+      "pathVariables": {},
+      "method": "POST",
+      "data": null,
+      "rawModeData": "{\r\n  \"Id\": 1,\r\n  \"Name\": \"sample string 2\"\r\n}",
+      "dataMode": "raw",
+      "name": "Test",
+      "description": "**Summary** Creates a new `T:Postman.WebApi.MsBuildTask.Tests.TestContent`.  \r\n**Parameters**  \r\n`TestContent` content - _The content._, required  \r\n**Returns**  \r\n`void`  \r\n",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea"
+    },
+    {
+      "id": "72f75505-4198-49b6-b0d3-c3948d3190c1",
+      "headers": "Content-Type: application/json",
+      "url": "{{myhost}}/api/v2/NoDocTest",
+      "pathVariables": {},
+      "method": "GET",
+      "data": null,
+      "rawModeData": null,
+      "dataMode": "raw",
+      "name": "NoDocTest",
+      "description": "**Returns**  \r\n`IHttpActionResult`  \r\n",
+      "descriptionFormat": "markdown",
+      "time": 1447293621108,
+      "version": null,
+      "responses": [],
+      "collectionId": "bb8b8da2-0567-496a-9e92-f313709edded",
+      "folder": "78aee376-5b52-4038-b097-9d3660f56a78"
+    }
+  ],
+  "folders": [
+    {
+      "id": "3ce0b134-fe9d-42f3-aa27-4576fc89f0ea",
+      "name": "Test",
+      "description": "The Test Controller  \n_This controller does not do much\r\n            \r\n\r\nSee `M:Postman.WebApi.MsBuildTask.Tests.TestController.TestGenericParameter``2(System.Linq.Expressions.Expression{System.Func{``0,`,System.String}})`.\r\n_",
+      "order": [
+        "3f3981cd-b31f-4a3b-8e3a-6c7506a2c1de",
+        "8f0205a5-9419-498f-bf08-302317ab3b4d",
+        "0cb99e35-9832-432d-80a6-ca7474e8de54",
+        "21406150-3069-4f25-aed2-bfde16f6b3f0",
+        "d41f6d8c-fbae-4615-879a-6787ae2cab38"
+      ],
+      "collection_id": "bb8b8da2-0567-496a-9e92-f313709edded"
+    },
+    {
+      "id": "78aee376-5b52-4038-b097-9d3660f56a78",
+      "name": "NoDocTest",
+      "description": "  \n__",
+      "order": [
+        "72f75505-4198-49b6-b0d3-c3948d3190c1"
+      ],
+      "collection_id": "bb8b8da2-0567-496a-9e92-f313709edded"
+    }
+  ],
+  "description": "Postman.WebApi.MsBuildTask.Tests Api v1.0.0.0",
+  "order": []
+}
