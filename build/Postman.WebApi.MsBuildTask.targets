@@ -1,7 +1,7 @@
 ﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<UsingTask
 		TaskName="Postman.WebApi.MsBuildTask.GenerateTask"
-		AssemblyFile="$(SolutionDir)packages\Postman.WebApi.MsBuildTask.0.0.1.0\tools\Postman.WebApi.MsBuildTask.dll">
+		AssemblyFile="$(SolutionDir)packages\Postman.WebApi.MsBuildTask.0.0.2.0\tools\Postman.WebApi.MsBuildTask.dll">
 	</UsingTask>
 	<Target Name="AfterBuild">
 		<Postman.WebApi.MsBuildTask.GenerateTask

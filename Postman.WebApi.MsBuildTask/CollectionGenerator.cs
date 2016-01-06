@@ -157,25 +157,20 @@ namespace Postman.WebApi.MsBuildTask
 					}
 
 					// scrub curly braces from url parameter values
-					var cleanUrlParameterUrl = _urlParameterVariableRegEx.Replace(apiDescription.RelativePath, "=$1-value");
-
-					// get path variables from url
-					var pathVariables = _pathVariableRegEx.Matches(cleanUrlParameterUrl)
-						.Cast<Match>()
-						.Select(m => m.Value)
-						.Select(s => s.Substring(1, s.Length - 2))
-						.ToDictionary(s => s, s => string.Format("{0}-value", s));
+					var pathTokens = apiDescription.RelativePath.Split(new char[] { '?' }, 2);
+					var path = _pathVariableRegEx.Replace(pathTokens[0], ":$1");
+					var queryString = pathTokens.Length > 1 ? _urlParameterVariableRegEx.Replace(pathTokens[1], "=") : string.Empty;
 
 					// prefix url with postman environment key variable
-					var url = baseUrl + apiDescription.RelativePath;
+					var url = path + (pathTokens.Length > 1 ? "?" + queryString : string.Empty);
 
 					var postmanRequest = new PostmanRequest
 					{
 						CollectionId = postManCollection.Id,
 						Id = Guid.NewGuid(),
-						Name = apiDescription.RelativePath,
+						Name = url,
 						Description = ToMarkdown(apiDescription),
-						Url = url,
+						Url = baseUrl + url,
 						Method = apiDescription.HttpMethod.Method,
 						Headers = "Content-Type: application/json",
 						RawModeData = sampleData == null ? null : sampleData.Text,
@@ -183,7 +178,6 @@ namespace Postman.WebApi.MsBuildTask
 						Time = postManCollection.Timestamp,
 						DescriptionFormat = "markdown",
 						Responses = new Collection<string>(),
-						PathVariables = pathVariables,
 						Folder = postManFolder.Id
 					};
 
