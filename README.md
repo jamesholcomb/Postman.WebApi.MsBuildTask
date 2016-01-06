@@ -1,5 +1,5 @@
 #Postman.WebApi.MsBuildTask
-[![Nuget version](https://img.shields.io/nuget/v/Postman.WebApi.MsBuildTask.svg)](https://www.nuget.org/packages/Postman.WebApi.MsBuildTask/0.0.1)
+[![Nuget version](https://img.shields.io/nuget/v/Postman.WebApi.MsBuildTask.svg)](https://www.nuget.org/packages/Postman.WebApi.MsBuildTask)
 [![Build status](https://ci.appveyor.com/api/projects/status/fbbjue07o913v0n7/branch/master?svg=true)](https://ci.appveyor.com/project/jamesholcomb/postman-webapi-msbuildtask/branch/master)
 ####What is it?
 An MSBuild [task](https://msdn.microsoft.com/en-us/library/t9883dzc.aspx) to automatically generate documented [Postman 3](http://www.getpostman.com) collections from your ApiController derived classes
